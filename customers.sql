@@ -7,7 +7,7 @@ Customers.id
  FROM
  analytics-engineers-club.coffee_shop.customers Customers
  LEFT JOIN analytics-engineers-club.coffee_shop.orders Orders
- ON C.id = O.customer_id
+ ON Customers.id = Orders.customer_id
 
  GROUP BY 1,2
  ORDER BY 4
