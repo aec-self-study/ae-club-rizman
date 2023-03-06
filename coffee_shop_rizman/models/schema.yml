@@ -1,0 +1,15 @@
+version: 1
+
+models:
+  - name: customers.sql
+    description: "list of customers and basic facts about their orders"
+    columns:
+      - name: id
+        description: "unique customer identifier"
+        tests:
+          - unique
+          - not_null
+      - name: total_orders
+        description: "total orders made lifetime by customer"
+        tests:
+          -not null
