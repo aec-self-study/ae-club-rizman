@@ -1,14 +1,14 @@
 SELECT
-Customers.id
-, Customers.Name
+C.id
+, C.Name
 , COUNT(DISTINCT(Orders.Id)) AS Total_Orders
 , MIN(Orders.Created_At) AS First_Order_Timestamp
-, NULL AS null_field
-
+, NULL AS test_field
+ 
  FROM
- analytics-engineers-club.coffee_shop.customers Customers
+ analytics-engineers-club.coffee_shop.customers C
  LEFT JOIN analytics-engineers-club.coffee_shop.orders Orders
- ON Customers.id = Orders.customer_id
+ ON C.id = Orders.customer_id
 
  GROUP BY 1,2
  ORDER BY 4
