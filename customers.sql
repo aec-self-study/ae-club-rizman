@@ -3,7 +3,7 @@ Customers.id
 , Customers.Name
 , COUNT(DISTINCT(Orders.Id)) AS Total_Orders
 , MIN(Orders.Created_At) AS First_Order_Timestamp
-, NULL AS test_field
+, MAX(Orders.Created_At) AS Last_Order_Timestamp
  
  FROM
  analytics-engineers-club.coffee_shop.customers customers
