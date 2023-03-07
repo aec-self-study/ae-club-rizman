@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: customers
+    description: "list of customers and basic facts about their orders"
+    columns:
+      - name: id
+        description: "unique customer identifier"
+        tests:
+          - unique
+          - not_null
+      - name: total_orders
+        description: "total orders made lifetime by customer"
+        tests:
+          - not_null
+
+sources:
+  - name: coffee_shop
+    project: analytics-engineers-club
+    tables:
+      - name: customers
+        columns: 
+          - name: id
+            tests: 
+              - unique
+              - not_null
+      - name: orders
+        columns: 
+          - name: id
+            tests: 
+              - unique
+              - not_null

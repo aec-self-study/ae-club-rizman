@@ -10,8 +10,8 @@ Customers.id
 , MAX(Orders.Created_At) AS Last_Order_Timestamp
  
  FROM
- analytics-engineers-club.coffee_shop.customers customers
- LEFT JOIN analytics-engineers-club.coffee_shop.orders Orders
+ {{source ( 'coffee_shop', 'customers' ) }} as customers
+ LEFT JOIN {{ source ('coffee_shop', 'orders')}} as Orders
  ON Customers.id = Orders.customer_id
 
  GROUP BY 1,2
