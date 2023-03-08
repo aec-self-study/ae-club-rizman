@@ -9,3 +9,11 @@ models:
         tests:
           - unique
           - not_null
+  - name: order_items_mart
+    description: "curated table of order items"
+    columns:
+      - name: order_item_id
+        description: "unique order item identifier"
+        tests:
+          - unique
+          - not_null
