@@ -52,3 +52,12 @@ sources:
             tests:
               - accepted_values:
                   values: ['coffee beans','brewing supplies', 'merch']
+  - name: web_tracking
+    project: analytics-engineers-club
+    tables:
+      - name: pageviews
+        columns: 
+          - name: id
+            tests: 
+              - unique
+              - not_null
