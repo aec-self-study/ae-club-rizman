@@ -1,6 +1,6 @@
 {{ config(materialized='table') }}
 
-with source as (
+with orders_stg as (
 
 select *
 from {{ ref ('orders_stg')}}
@@ -8,14 +8,14 @@ from {{ ref ('orders_stg')}}
 
 staged as (
 select
-source.*
-, count(*) over (partition by customer_id order by order_created_at) as customer_order_number
+orders_stg.*
+, count(*) over (partition by orders_stg.customer_id order by orders_stg.order_created_at) as customer_order_number
 , case
-    when count(*) over (partition by customer_id order by order_created_at) = 1 THEN 'new customer'
-    else 'repeat customer'
-    end as new_repeat_customer
+    when count(*) over (partition by orders_stg.customer_id order by orders_stg.order_created_at) = 1 THEN 'new customer order'
+    else 'returning customer order'
+    end as new_or_returning_customer_order
 
-from source
+from orders_stg
 )
 
 select * from staged
