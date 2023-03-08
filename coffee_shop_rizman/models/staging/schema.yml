@@ -9,3 +9,19 @@ models:
         tests:
           - unique
           - not_null
+  - name: order_items_stg
+    description: "staged table of order items"
+    columns:
+      - name: order_item_id
+        description: "unique order identifier"
+        tests:
+          - unique
+          - not_null
+  - name: products_stg
+    description: "staged table of products"
+    columns:
+      - name: product_id
+        description: "unique product identifier"
+        tests:
+          - unique
+          - not_null

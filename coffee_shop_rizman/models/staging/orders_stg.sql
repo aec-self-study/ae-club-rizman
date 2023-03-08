@@ -8,8 +8,8 @@ from {{ source ('coffee_shop', 'orders')}}
 
 staged as (
 select
-id as order_id
-, customer_id			
+cast (id as string) as order_id
+, cast (customer_id as string) as customer_id			
 , address as order_address
 , state as order_state
 , zip as order_zip
