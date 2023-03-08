@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: orders_stg
+    description: "staged table of orders"
+    columns:
+      - name: order_id
+        description: "unique order identifier"
+        tests:
+          - unique
+          - not_null
