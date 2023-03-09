@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: date_spine
+    description: "days from 1/1/21 to 6/30/21"
+    columns:
+      - name: date_day
+        description: "day"
+        tests:
+          - unique
+          - not_null
