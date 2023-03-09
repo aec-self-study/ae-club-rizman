@@ -1,6 +1,5 @@
 {{config (materialized = 'table')}}
-{% set product_categories = ['coffee beans', 'merch',
- 'brewing supplies'] %}
+{% set product_categories = product_categories_list () %}
 
 select
 cast(date_trunc(order_created_at, month) as date) as date_month
