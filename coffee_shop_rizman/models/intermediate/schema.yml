@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: sessions
+    description: "sessions of visitor pageviews"
+    columns:
+      - name: with_session_number
+        description: "session of visitor making pageviews"
+          
