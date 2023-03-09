@@ -1,3 +1,5 @@
+{{ config(materialized='table') }}
+
 with generated as (
     {{ dbt_utils.date_spine(
         datepart="day",
