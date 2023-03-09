@@ -10,10 +10,10 @@ staged as (
 select
 id as pageview_id
 , visitor_id
-, device_type
-, timestamp
-, page
 , customer_id
+, device_type
+, page
+, timestamp
 
 from source
 )
