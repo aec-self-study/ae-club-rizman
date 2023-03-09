@@ -17,3 +17,13 @@ models:
         tests:
           - unique
           - not_null
+  - name: pageviews_mart
+    description: "curated table of page views"
+    columns:
+      - name: pageview_id
+        description: "unique pageview"
+        tests:
+          - unique
+          - not_null
+  - name: orders_by_week_mart
+    description: "curated table of orders by week"
