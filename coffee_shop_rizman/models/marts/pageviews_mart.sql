@@ -12,6 +12,7 @@ first_visitor_id as (
     , visitor_id
 
     from pageviews_stg
+    qualify row_number() over (partition by customer_id order by timestamp) = 1
 ),
 
 sessions as (
