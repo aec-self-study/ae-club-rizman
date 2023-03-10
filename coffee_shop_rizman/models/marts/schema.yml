@@ -9,6 +9,7 @@ models:
         tests:
           - unique
           - not_null
+
   - name: order_items_mart
     description: "curated table of order items"
     columns:
@@ -17,6 +18,10 @@ models:
         tests:
           - unique
           - not_null
+      - name: product_price
+        tests:
+          - is_not_free
+          
   - name: pageviews_mart
     description: "curated table of page views"
     columns:
