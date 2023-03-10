@@ -1,4 +1,5 @@
  {{ config(materialized='table') }}
+ {{config (schema = 'test')}}
  
  select
   date_trunc(first_order_timestamp, month) AS month
