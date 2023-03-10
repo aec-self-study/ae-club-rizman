@@ -13,6 +13,8 @@ models:
         description: "total orders made lifetime by customer"
         tests:
           - not_null
+      - name: form_respondents
+        description: "aggregation of form responses"
 
 sources:
   - name: coffee_shop
@@ -61,3 +63,7 @@ sources:
             tests: 
               - unique
               - not_null
+  - name: advanced_dbt_examples
+    project: analytics-engineers-club
+    tables:
+      - name: form_events
