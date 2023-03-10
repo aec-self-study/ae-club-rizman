@@ -25,3 +25,17 @@ models:
         tests:
           - unique
           - not_null
+  - name: product_prices_stg
+    tests:
+      - dbt_utils.mutually_exclusive_ranges:
+          lower_bound_column: product_price_created_at
+          upper_bound_column: product_price_ended_at
+          partition_by: product_id
+          gaps: not_allowed
+    description: "staged table of product prices"
+    columns:
+      - name: product_price_id
+        description: "unique product identifier"
+        tests:
+          - unique
+          - not_null
