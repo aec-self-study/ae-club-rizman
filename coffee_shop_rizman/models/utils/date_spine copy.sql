@@ -2,7 +2,7 @@
 
 with generated as (
     {{ dbt_utils.date_spine(
-        datepart="day",
+        datepart="month",
         start_date="cast('2021-01-01' as date)",
         end_date="cast('2021-06-30' as date)"
     ) }}
